@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Person
+<h2>Are you sure to delete the following?</h2>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">First Name : @Model.FirstName</li>
+    <li class="list-group-item">Last Name : @Model.LastName</li>
+    <li class="list-group-item">Address : @Model.Address</li>
+    <li class="list-group-item">Gender : @Model.Gender</li>
+    <li class="list-group-item">Salary : @Model.Salary</li>
+
+</ul>
+
+<form asp-controller="Employee" asp-action="Delete" method="POST">
+    <input type="hidden" asp-for="Id">
+    <button type="submit" class="btn btn-danger">Delete Anyhow</button>
+</form>

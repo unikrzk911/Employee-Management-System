@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Person
+
+@{
+    ViewData["TitlePhrase"] = "Update Employee";
+}
+<h3>Update Employee</h3>
+<hr />
+
+<form asp-controller="Employee" asp-action="Edit" method="POST">
+    <input type="hidden" asp-for="Id">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <span class="text-danger" asp-validation-for="FirstName"></span>
+        <input type="text" class="form-control" asp-for="FirstName" placeholder="Enter First Name">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <span class="text-danger" asp-validation-for="LastName"></span>
+        <input type="text" class="form-control" asp-for="LastName" placeholder="Enter Last Name">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <textarea class="form-control" asp-for="Address" placeholder="Enter Address"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <input type="text" class="form-control" asp-for="Gender" placeholder="Enter Gender">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Salary"></label>
+        <input type="number" class="form-control" asp-for="Salary" placeholder="Enter Salary">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Employee</button>
+</form>

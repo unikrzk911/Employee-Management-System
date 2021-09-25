@@ -1,0 +1,34 @@
+﻿@model List<Person>
+<h1>All employees...</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Salary</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+        <tr scope="row">
+            <td>
+                <a href="/employee/detail?ID=@employee.Id">@employee.Id</a>
+            </td>
+            <td>@employee.FirstName</td>
+            <td>@employee.LastName</td>
+            <td>@employee.Address</td>
+            <td>@employee.Gender</td>
+            <td>@employee.Salary</td>
+            <td><a class="btn btn-outline-primary" href="/Employee/Edit?ID=@employee.Id">Edit</a></td>
+            <td><a class="btn btn-outline-danger" href="/Employee/Delete?ID=@employee.Id">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
